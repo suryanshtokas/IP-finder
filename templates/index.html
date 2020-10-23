@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} IP Finder {% endblock %}
+
+{% block body %}
+
+
+
+<div class="container">
+
+    <h1>IP Focation Finder</h1>
+    
+    <br>
+    <br> 
+
+    <p>IP Address is : {{data.ip}}</p>
+    <p>City is : {{data.city}}</p>
+    <p>Country is : {{data.country}}</p>
+    <p>Latitude Information Is : {{data.latitude}}</p>
+   <p>Longitude Information Is : {{data.longitude}}</p>
+   <p>Time Zone Information Is : {{data.timezone}}</p>
+   <p>Availble Calling Code : {{data.country_calling_code}}</p>
+   <p>Available Currency Is : {{data.currency}}</p>
+   <p>Internet Network Is : {{data.org}}</p>
+     <p>Continent Code Is : {{data.continent_code}}</p>
+   <p>Postal Code Is : {{data.postal}}</p>
+     <p>UTC Offset Is : {{data.utc_offset}}</p>
+
+</div>
+
+{% endblock %}
