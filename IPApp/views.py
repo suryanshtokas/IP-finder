@@ -5,15 +5,17 @@ def index(request):
     search = request.POST.get('search')
     data = ipapi.location(ip=search, output="json")
 
+    search = get_client_ip(request)
+
     context = {"data": data}
 
     return render(request, 'index.html', context)
 
 def finder(request):
-    search = get_client_ip(request)
+    search = search = request.POST.get('search')
     data = ipapi.location(ip=search, output="json")
-
-    context = {"data": data}
+    default_IP = get_client_ip(request)
+    context = {"data": data, "ip":default_IP}
 
     return render(request, 'finder.html', context)
 
